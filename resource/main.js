@@ -66,7 +66,7 @@ $(document).ready(function(){
         notify(txt= $('#nikname').val()+' ...'  , 'success' )
     })
     $('.room_btn').click(function (e) { 
-        notify(txt='...!'  , 'failure' )
+        notify(txt='... !'  , 'failure' )
     })
 
 });
