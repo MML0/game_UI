@@ -1,0 +1,215 @@
+<style>.card {
+    margin: 30px auto;
+
+    width: 280px;
+    height: 205px;
+    position: relative;
+    padding: 25px;
+    background: radial-gradient(178.94% 106.41% at 26.42% 106.41%, #FFF7B1 0%, rgba(255, 255, 255, 0) 71.88%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #FFFFFF;
+    box-shadow: 0px 155px 62px rgba(0, 0, 0, 0.01), 0px 87px 52px rgba(0, 0, 0, 0.05), 0px 39px 39px rgba(0, 0, 0, 0.09), 0px 10px 21px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 23px;
+    transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .container {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    right: -35px;
+    top: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.7);
+  }
+  
+  .cloud {
+    width: 250px;
+  }
+  
+  .front {
+    padding-top: 45px;
+    margin-left: 25px;
+    display: inline;
+    position: absolute;
+    z-index: 11;
+    animation: clouds 8s infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .back-c {
+    margin-top: -30px;
+    margin-left: 150px;
+    z-index: 12;
+    animation: clouds 12s infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .right-front {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% 50% 50% 0%;
+    background-color: #4c9beb;
+    display: inline-block;
+    margin-left: -25px;
+    z-index: 5;
+  }
+  
+  .left-front {
+    width: 65px;
+    height: 65px;
+    border-radius: 50% 50% 0% 50%;
+    background-color: #4c9beb;
+    display: inline-block;
+    z-index: 5;
+  }
+  
+  .right-back {
+    width: 50px;
+    height: 50px;
+    border-radius: 50% 50% 50% 0%;
+    background-color: #4c9beb;
+    display: inline-block;
+    margin-left: -20px;
+    z-index: 5;
+  }
+  
+  .left-back {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 0% 50%;
+    background-color: #4c9beb;
+    display: inline-block;
+    z-index: 5;
+  }
+  
+  .sun {
+    width: 120px;
+    height: 120px;
+    background: -webkit-linear-gradient(to right, #fcbb04, #fffc00);
+    background: linear-gradient(to right, #fcbb04, #fffc00);
+    border-radius: 60px;
+    display: inline;
+    position: absolute;
+  }
+  
+  .sunshine {
+    animation: sunshines 2s infinite;
+  }
+  
+  @keyframes sunshines {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+  
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes clouds {
+    0% {
+      transform: translateX(15px);
+    }
+  
+    50% {
+      transform: translateX(0px);
+    }
+  
+    100% {
+      transform: translateX(15px);
+    }
+  }
+  
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card-header span:first-child {
+    word-break: break-all;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 135%;
+    color: rgba(87, 77, 51, 0.66);
+  }
+  
+  .card-header span:last-child {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 135%;
+    color: rgba(87, 77, 51, 0.33);
+  }
+  
+  .temp {
+    position: absolute;
+    left: 25px;
+    bottom: 12px;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+    color: rgba(87, 77, 51, 1);
+  }
+  
+  .temp-scale {
+    width: 80px;
+    height: 36px;
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 9px;
+  }
+  
+  .temp-scale span {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 134.49%;
+    color: rgba(87, 77, 51, 0.66);
+  }</style>
+  <h1>home</h1>
+<div class="card">
+    <div class="container">
+      <div class="cloud front">
+        <span class="left-front"></span>
+        <span class="right-front"></span>
+      </div>
+      <span class="sun sunshine"></span>
+      <span class="sun"></span>
+      <div class="cloud back-c">
+        <span class="left-back"></span>
+        <span class="right-back"></span>
+      </div>
+    </div>
+  
+    <div class="card-header">
+      <span>Messadine, Susah<br>Tunisia</span>
+      <span>March 13</span>
+    </div>
+  
+    <span class="temp">23°</span>
+  
+    <div class="temp-scale">
+      <span>Celcius</span>
+    </div>
+  </div>
+  <a href="/randomshit/">randomshit</a>
+    <br>
+    <a href="/simpler/" target="_blank" rel="">another mode</a>
+    <br>
+    <a href="/Files/" target="_blank" rel="">File</a>
+    <br>
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, eum.</p>
+<img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/328990786/original/dc9bad38e22bf6d4027539f94a235e6a0f138c33/create-stunning-ui-ux-design-for-your-website-or-app.png" alt="">
+<p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta praesentium esse quaerat beatae cupiditate, corporis ea sequi? Ullam distinctio recusandae molestias itaque harum. Facere sit atque temporibus quidem consequatur ullam quis, veniam voluptates vero. Inventore asperiores aliquam autem odio amet veniam quae dicta, harum quod mollitia tenetur quasi atque possimus eligendi numquam impedit. Aspernatur error soluta repellendus numquam nesciunt. Ipsam doloribus saepe debitis, vero aspernatur quis? Dolores molestias perspiciatis consectetur quibusdam nesciunt fugiat at delectus, numquam placeat quas similique, cumque aspernatur cum id excepturi quos deleniti corrupti harum voluptatem reprehenderit eos? Quibusdam ab voluptate, quaerat vel quae ipsam, eum voluptatibus fugit quod accusantium, natus tempore! Ratione aliquid consequatur, quam explicabo nostrum nemo hic iure perspiciatis est esse voluptas cum unde laudantium consequuntur quas aspernatur veniam, provident expedita officia debitis fugiat odio! Eveniet alias eius tempora ullam quaerat harum nam, quasi corporis! Quibusdam omnis animi eius quisquam beatae, eum sunt. Cum, iusto aperiam? Deleniti, voluptates! Corporis dignissimos totam molestiae minima veritatis tenetur officiis architecto esse omnis exercitationem, libero eaque ipsam a autem quam hic voluptate porro error? Earum laborum assumenda ipsum perferendis, soluta aliquid molestiae eos ad aliquam odio delectus qui commodi aut accusamus quis reprehenderit unde sed, dolorem similique tempore esse hic voluptates eaque. Laboriosam labore molestias assumenda rem laborum provident eaque impedit doloremque obcaecati omnis nihil ipsa voluptatem esse eius deserunt consequuntur voluptate maxime eos, cupiditate, voluptas voluptatibus maiores debitis quis earum. Ut quasi quod cumque saepe perferendis nemo animi a modi magni, obcaecati voluptates accusamus ipsum, libero tempora aspernatur quaerat enim fugit adipisci amet sit eligendi tempore. Consequatur commodi, error omnis necessitatibus expedita quidem possimus nostrum saepe vitae nam officiis sapiente repudiandae enim amet tempora esse sint, in nisi rem placeat maxime eveniet aliquam fugiat totam. Ab totam vitae, soluta, maiores provident ipsam itaque corrupti quisquam maxime labore sunt cupiditate quas suscipit esse eligendi obcaecati distinctio repellat aliquid, reprehenderit amet? Quam cupiditate corrupti officiis nulla eaque necessitatibus ratione maxime ipsa eos eum. Neque dolores quos esse quod omnis commodi aspernatur non pariatur earum, eveniet dignissimos officiis iure autem repellat blanditiis labore architecto, est mollitia eaque magnam facilis quam? A cumque minus placeat enim, sapiente animi eius error aut, non praesentium provident ullam quis quam iure officiis. Quod cupiditate distinctio voluptate expedita labore quia fuga assumenda est, molestiae ipsum, delectus eveniet libero voluptates illum nostrum! Quod fugit dolor hic nisi quam velit eveniet vel placeat perferendis, commodi itaque in rem modi doloribus autem, dolorum, repellat dolorem impedit quo cum officiis deleniti consequatur dolore? Obcaecati modi, officia cupiditate nihil enim consectetur magnam! Atque voluptatibus, explicabo aspernatur quibusdam maiores facilis voluptatem illum accusamus quo aut dolorem tempore dolore. Laboriosam itaque alias nam eum voluptate eos praesentium, minus dolorem, aut fugiat voluptas ex perspiciatis magnam? Dolores ea qui eveniet perferendis veniam consectetur optio deserunt, omnis veritatis vel modi ipsa totam obcaecati quia dicta sapiente soluta consequatur officiis ad dolorem est libero. Soluta tenetur recusandae id, ab voluptas ratione debitis illum facilis numquam, laudantium enim unde reprehenderit molestiae, ipsam facere. Ut, iure nulla!</p>
