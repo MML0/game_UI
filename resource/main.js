@@ -41,10 +41,24 @@ $(document).ready(function(){
 
     //setTimeout(function(){$('.prof_pic').trigger( "click" );}, 5000) // fake notification
 
-
+    window.history.pushState(null, "", window.location.href);        
+    window.onpopstate = function() {
+            window.history.pushState(null, "", window.location.href);
+            $('.login_div').css('display', 'none');
+            $('.dark').css('display', 'none');
+        };
+    $('.dark').click(function (e) { 
+        $('.login_div').css('display', 'none');
+        $('.dark').css('display', 'none');
+    })
+    $('#log_in').click(function (e) {
+        notify(txt='wrong password or username !'  , 'failure' )
+    })
     $('.sign_in').click(function (e) { 
         //$('.nav').trigger("click");
         notify(txt='under maintenance'  , 'warning' )
+        $('.dark').css('display', 'block');
+        $('.login_div').css('display', 'block');
 
         // if ($('.prof_pic').hasClass('shake')){
         // }else{

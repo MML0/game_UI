@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="resource/main.css?v=1.42" />
+    <link rel="stylesheet" href="resource/main.css?v=1.43" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <script src="resource/jquery-3.7.1.js"></script>
-    <script src="resource/main.js?v=1.42"></script>
-
+    <script src="resource/main.js?v=1.43"></script>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <title>Game</title>
   </head>
   <body>
@@ -30,6 +30,16 @@
       <div class="nav"><i class="fa fas fa-stream"></i><br><span>this</span></div>
       <div class="logo"><i class="fa fa-gamepad"></i></div>
       <div class="sign_in"><i class="fa fa-sign-in"></i><br><span>log in</span></div>
+    </div>
+    <div class="dark"></div>
+    <div class="login_div">
+      <i class="title">LOG IN</i><br>
+      <form onsubmit="return false;">
+        <input type="text" placeholder="username" required id="userNameInput"/>
+        <input type="password" placeholder="password" required id="passWordInput"/>
+        <button onclick="" id="log_in"><i class="fas fa-sign-in"></i><strong>LOG IN</strong></button>
+      </form>
+      <button class="sign_up" type="button"><i class="fas fa-user-plus"></i><strong>SIGN UP</strong></button>
     </div>
     <div class="main_content">
       <div class="name_form">
