@@ -44,21 +44,28 @@ $(document).ready(function(){
     window.history.pushState(null, "", window.location.href);        
     window.onpopstate = function() {
             window.history.pushState(null, "", window.location.href);
-            $('.login_div').css('display', 'none');
-            $('.dark').css('display', 'none');
+            $('.info_div').animate({'opacity': "0.0"}, 200)
+            $('.dark').animate({'opacity': "0.0"}, 200,function(){
+                $('.info_div').css('display', 'none');
+                $('.dark').css('display', 'none');
+            });
         };
     $('.dark').click(function (e) { 
-        $('.login_div').css('display', 'none');
-        $('.dark').css('display', 'none');
+        $('.info_div').animate({'opacity': "0.0"}, 200)
+            $('.dark').animate({'opacity': "0.0"}, 200,function(){
+                $('.info_div').css('display', 'none');
+                $('.dark').css('display', 'none');
+            }); 
+
+
     })
     $('#log_in').click(function (e) {
         notify(txt='wrong password or username !'  , 'failure' )
     })
-    $('.sign_in').click(function (e) { 
-        //$('.nav').trigger("click");
-        notify(txt='under maintenance'  , 'warning' )
-        $('.dark').css('display', 'block');
-        $('.login_div').css('display', 'block');
+    $('.nav').click(function (e) { 
+        //$('.dark').css('display', 'block');
+        //$('.info_div').css('display', 'block');
+        notify(txt='Loading ...'  , 'warnin' )
 
         // if ($('.prof_pic').hasClass('shake')){
         // }else{
@@ -68,16 +75,34 @@ $(document).ready(function(){
         //     setTimeout(function(){$('.prof_pic').removeClass('shake');}, 800)
         // }
     })
-    $('.nav').click(function (e) { 
-        notify(txt='there is no purpose'  , 'failure' )
-
+    $('.info').click(function (e) { 
+        //notify(txt='there is no purpose'  , 'failure' )
+        $('.dark').css({'opacity': "0.0",'display': 'block'});
+        $('.info_div').css({'opacity': "0.1","transform": "scale(1)",'display': 'block'});
+        $('.info_div').animate({'opacity': "1","transform": "scale(1.0)"}, 200)
+        $('.dark').animate({'opacity': "1"}, 100)
         statuss = ['failure','success','warning']
         text = ['successfully failed ', 'Internal Server Error', 'Bad Request', 'Unauthorized', 'Forbidden', 'Gateway Timeout', 'Service Unavailable', 'Network Connection Error', 'DNS Resolution Failure', 'Cross-Origin Request Blocked', 'SSL/TLS Handshake Failure', 'Invalid URL', 'Invalid Input Data', 'Session Expired', 'Database Connection Error', 'File Upload Failure', 'Out of Memory Error', 'Script Error', 'Resource Not Available', 'Permission Denied', 'Session Timeout']
         stat = statuss[Math.floor( Math.random() * statuss.length )]
         //notify(txt=text[Math.floor( Math.random() * text.length )]  ,stat)
     })
     $('.play_btn').click(function (e) { 
-        notify(txt= $('#nikname').val()+' ...'  , 'success' )
+        notify(txt= $('#nikname').val()+' '  , 'success' )
+
+        var xhl = new XMLHttpRequest();
+        xhl.open("Post" , "./result.php" , true);
+        xhl.onreadystatechange=()=>{
+        if(xhl.status==200 && xhl.readyState==xhl.DONE){
+            xhl.responseText();
+        }
+        var data = new FormData(document.getElementById("form"));
+        xhl.send(data);
+        }
+        $.get("/games/index.html", function(data, status){
+            //alert("Data: " + data + "\nStatus: " + status);
+            $('.main_content').html(data);
+        });
+        //$('.main_content').html("<h1>hi</h1>");
     })
     $('.room_btn').click(function (e) { 
         notify(txt='... !'  , 'failure' )

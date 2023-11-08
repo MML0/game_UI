@@ -3,56 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="resource/main.css?v=1.43" />
+    <link rel="stylesheet" href="/resource/main.css?v=1.43" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <script src="resource/jquery-3.7.1.js"></script>
-    <script src="resource/main.js?v=1.43"></script>
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="/resource/favicon.png" type="image/x-icon">
+    <link rel="manifest" href="/resource/manifest.json" />
     <title>Game</title>
   </head>
   <body>
     <div class="notification_div">
-      <!--<div class="notification_box success">
-        <span style="color: black;">successfully failed 2312312121234</span> <i class="fa-solid fa-circle-check"></i>
-      </div>
-       <div class="notification_box failure">
-        <span style="color: black;">successfully failed</span> <i class="fa-solid fa-circle-xmark"></i>
-      </div>
-      <div class="notification_box warning">
-        <span style="color: black;">failed notifxnotification_box</span> <i class="fa-solid fa-triangle-exclamation"></i></i>
-      </div> -->
-
+     
     </div>
     <div class="header_div">
-      <div class="nav"><i class="fa fas fa-stream"></i><br><span>this</span></div>
-      <div class="logo"><i class="fa fa-gamepad"></i></div>
-      <div class="sign_in"><i class="fa fa-sign-in"></i><br><span>log in</span></div>
+      <div class="info"><i class="bi bi-info-circle"></i><br><span></span></div>
+      <div class="logo"><i class="bi bi-controller"></i></div>
+      <div class="nav"><i class="fa fa-bars"></i><br><span></span></div>
     </div>
     <div class="dark"></div>
-    <div class="login_div">
-      <i class="title">LOG IN</i><br>
-      <form onsubmit="return false;">
-        <input type="text" placeholder="username" required id="userNameInput"/>
-        <input type="password" placeholder="password" required id="passWordInput"/>
-        <button onclick="" id="log_in"><i class="fas fa-sign-in"></i><strong>LOG IN</strong></button>
-      </form>
-      <button class="sign_up" type="button"><i class="fas fa-user-plus"></i><strong>SIGN UP</strong></button>
+    <div class="info_div">
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>contribute on github</p>
+      <p>Lorem ipsum dolor sit. </p>
+      <div class="line"></div><br>
+      <a href="https://github/mml0"><i class="bi bi-github"></i></a>
+      <a href="https://instagram.com/"><i class="bi bi-instagram"></i></a>
+      <a href="https://t.me/"><i class="bi bi-telegram"></i></a>
+      <a href="https://youtube.com/"><i class="bi bi-youtube"></i></a>
+      <a href="https://discord.com/"><i class="bi bi-discord"></i></a>
     </div>
     <div class="main_content">
       <div class="name_form">
         <div class="avatar"><i class="fa fa-pen"></i></div>
-        <span>NICKNAME:</span><br>
+        <span>NICKNAME:</span>
         <input id="nikname" type="text" name="text" id="name" value="User"><br>
         <span>LANGUAGE:</span><br>
-        <select name="language"><optgroup label="Available Themes"><option selected="" value="34">فارسی</option><option value="14">Deutsch</option><option value="2">English</option><option value="17">中文 (香港)</option><option value="20">한국어</option><option value="26">Afrikaans</option><option value="66">Kurdî</option></select>
+        <select name="language"><optgroup label="Available Languages"><option selected="" value="1">فارسی</option><option value="2">English</option></select>
       </div>
-      <button class="play_btn" type="button"><i class="fas fa-gamepad"></i><strong>PLAY!</strong></button><br>
+      <button class="play_btn" type="button"><i class="fas fa-gamepad" id="btnplay"></i><strong>PLAY!</strong></button><br>
       <button class="room_btn" type="button"><i class="fas fa-door-open"></i><strong>ROOMS</strong></button>
     </div>
 
-    
+    <script src="/resource/jquery-3.7.1.js"></script>
+    <script src="/resource/main.js?v=1.43"></script>
   </body>
 </html>

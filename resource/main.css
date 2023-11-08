@@ -12,6 +12,12 @@ body{
 }
 
 
+@keyframes hover_shadow {
+    0% {box-shadow: -3px 5px 8px -1px rgba(0,0,0,0.22);}
+    50% { box-shadow: -1px 2px 8px 1px rgba(0,0,0,0.42);}
+    100% {box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.52);
+        border: #bb9bfa 2px solid ;}
+  }
 @keyframes slide_left {
     0% { margin-right: -350px;}
   20% {  margin-right: -250px;}
@@ -97,7 +103,7 @@ body{
     height: 100px;
     margin: auto;
     border-radius: 200px;
-    border: solid #1c3d7a;
+    border: solid #1c3d7a 3px;
 
     margin-top: -90px;
     margin-bottom: 20px;
@@ -107,9 +113,9 @@ body{
 }
 .avatar i{
     color: #ffffff;
-    background-color: #17105b;
+    background-color: #1f1676;
     border-radius: 200px;
-    border: solid #598ef3;
+    border: solid #699cfa;
     width: 40px;
     height: 30px;
     padding-top:10px;
@@ -119,14 +125,14 @@ body{
     float: right;
 }
 .room_btn{
-    background-color: #45ffe3;
+    background-color: #13bafe;
 }
 .play_btn{
     margin-top: 80px;
-    background-color: #e9ff45;
+    background-color: #ffbf00;
 }
 button{
-    color: #150c38;
+    color: #031940;
     text-align: center;
     justify-content: center;
     font-family: 'Courier New', Courier, monospace;
@@ -138,7 +144,7 @@ button{
     width: 200px;
 }
 button i {
-    color: #0f0049;
+    color: #150553;
     margin: auto;
     float: left;
     padding-left: 5px;
@@ -165,7 +171,7 @@ button i {
     justify-content: space-between;
 }
 
-.header_div .nav{
+.header_div .info{
     color: #ffffff;
     text-shadow: 2px 1px #00000046;
 
@@ -189,15 +195,15 @@ button i {
     text-shadow: 3px 2px #00000046;
    
 }
-.header_div .sign_in{
+.header_div .nav{
     text-shadow: 3px 2px #00000046;
     height: fit-content;
     color: #ffffff;
-    margin-right: 20px;
+    margin-right: 25px;
     font-size:22px;
     display: inline;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 25px;
     text-align: center;
 
     
@@ -209,67 +215,27 @@ button i {
 }
 .header_div span{
     margin: 0px;
-    line-height: 0px;
+    line-height: -10px;
     font-size: 20px;
 
 }
-.login_div .title{
-    position: relative;
-    top: -50px;
-    margin-top: -30px;
-    margin-bottom: 200px;
-    background-color: #0f0049;
-    background-image: linear-gradient(36deg,#401dca,#4274e8,#08666c);
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    justify-content: center;
-    border-radius: 10px;
-    font-size: 25px;
-    box-shadow: 0px 5px 10px 3px rgba(0,0,0,0.45);
-    border: #f5f4f46d 2px solid;
-}
-.login_div input {
-    border: none;
-    border-style: none none solid none;
-    border-color: #3d3d3d;
-    width: 80%;
-    margin-bottom: 25px;
-    height: 50px;
-    font-size: 20px;
-    color: #6d6b6b;
-    padding: 5px;
-
-}
-.login_div button {
-    border-style: none none solid none;
-    border-color: #3d3d3d;
-    width: 70%;
-    margin-bottom: 35px;
-    margin-top: 5px;
-    height: 30px;
-    font-size: 20px;
-    background-color: #d53131;
-    color: #ffffff;
-    padding: 5px;
-}
-.login_div .sign_up {
-    
-    border-style: none none solid none;
-    border-color: #3d3d3d;
-    width: 50%;
-    margin-bottom: 35px;
-    margin-top: 25px;
-    height: 30px;
+.info_div p {
+    color: #e4f6f1;
     font-size: 18px;
-    background-color: #94881b;
-    color: #ffffff;
-    padding: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.login_div{
-    box-shadow: 0px 0px 15px 4px rgba(0,0,0,0.55);
+.info_div i {
+    font-size: 26px;
+    color: #ffffff;
+    margin: 8px;
+    text-shadow: 3px 2px #00000069;
 
-    background-color: #edf0f3;
+}
+.info_div{
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.15);
+    border: #0a5efb solid 2px;
+    background-color: #231980;
+    background-image: linear-gradient(32deg,#1e2896,#231980,#3b1980);
     display: block;
     position: fixed;
     width: 300px;
@@ -291,10 +257,17 @@ button i {
     left: 0px;
     width: 101%;
     height: 101%;
-    background-color: #000000ce;
+    background-color: #0000009b;
     z-index: 4;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
         
+}
+.line{
+    margin: auto;
+    margin-bottom: 0px;
+    width: 85%;
+    height: 1px;
+    background-image: linear-gradient(90deg,#e2080800,#160a0af2,#160a0af2,#160a0af2,#e2080800 );
 }
 .shake{
     animation: animation_bell_shake 800ms 2 ;
@@ -363,3 +336,40 @@ button i {
     color: #99a700;
     
 } 
+
+
+
+/* game select section */
+.games_div{
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.game_logo:hover{
+    animation: hover_shadow 100ms 1 forwards ;
+}
+.game_logo{
+    background-color: #f5f4e8;
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    box-shadow: -3px 5px 8px -1px rgba(0,0,0,0.22);
+    border: #97ec9b 2px solid ;
+    border-radius: 15px;
+}
+.game_logo img{
+    width: 150px;
+    height: 110px;
+    border-radius: 15px 15px 0px 0px;
+
+}
+.game_logo strong{
+    color: #101232;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    user-select: none;
+}
