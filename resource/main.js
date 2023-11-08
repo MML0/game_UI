@@ -49,6 +49,12 @@ $(document).ready(function(){
                 $('.info_div').css('display', 'none');
                 $('.dark').css('display', 'none');
             });
+            if(true){
+                $.get("index.html", function(data, status){
+                    //alert("Data: " + data + "\nStatus: " + status);
+                    $('.main_content').html(data);
+                });
+            }
         };
     $('.dark').click(function (e) { 
         $('.info_div').animate({'opacity': "0.0"}, 200)
@@ -65,7 +71,7 @@ $(document).ready(function(){
     $('.nav').click(function (e) { 
         //$('.dark').css('display', 'block');
         //$('.info_div').css('display', 'block');
-        notify(txt='Loading ...'  , 'warnin' )
+        notify(txt='Loading ...'  , 'warning' )
 
         // if ($('.prof_pic').hasClass('shake')){
         // }else{
@@ -98,7 +104,7 @@ $(document).ready(function(){
         var data = new FormData(document.getElementById("form"));
         xhl.send(data);
         }
-        $.get("/games/index.html", function(data, status){
+        $.get("games/index.html", function(data, status){
             //alert("Data: " + data + "\nStatus: " + status);
             $('.main_content').html(data);
         });
