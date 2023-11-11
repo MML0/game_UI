@@ -250,6 +250,26 @@ button i {
     padding: 40px 5px;
     border-radius: 20px;
 }
+.loading i{
+    color: #ffffff;
+    font-size: 3rem;
+    top: 45%;
+    position: relative;
+}
+.loading{
+    text-align: center;
+    justify-content: center;
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 101%;
+    height: 101%;
+    background-color: #000000b6;
+    z-index: 4;
+    backdrop-filter: blur(12px);
+        
+}
 .dark{
     display: none;
     position: fixed;

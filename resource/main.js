@@ -43,7 +43,7 @@ $(document).ready(function(){
 
     window.history.pushState(null, "", window.location.href);        
     window.onpopstate = function() {
-            window.history.pushState(null, "", window.location.href);
+            //window.history.pushState(null, "", window.location.href);
             $('.info_div').animate({'opacity': "0.0"}, 200)
             $('.dark').animate({'opacity': "0.0"}, 200,function(){
                 $('.info_div').css('display', 'none');
@@ -94,7 +94,8 @@ $(document).ready(function(){
     })
     $('.play_btn').click(function (e) { 
         notify(txt= $('#nikname').val()+' '  , 'success' )
-
+        $('.loading').animate({'opacity': "1.0"}, 200,function(){$('.loading').css('display', 'block');})
+        
         var xhl = new XMLHttpRequest();
         xhl.open("Post" , "./result.php" , true);
         xhl.onreadystatechange=()=>{
@@ -109,9 +110,16 @@ $(document).ready(function(){
             $('.main_content').html(data);
         });
         //$('.main_content').html("<h1>hi</h1>");
+        $('.loading').animate({'opacity': "0.0"}, 200,function(){$('.loading').css('display', 'none');})
+
     })
     $('.room_btn').click(function (e) { 
         notify(txt='... !'  , 'failure' )
     })
-
+    //clear loading page
+    $('.loading').animate({'opacity': "0.0"}, 200,function(){$('.loading').css('display', 'none');})
 });
+window.onload = function () {
+    console.log('loaded');
+    $('.loading').animate({'opacity': "0.0"}, 200,function(){$('.loading').css('display', 'none');})
+}
