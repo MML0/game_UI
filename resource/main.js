@@ -1,3 +1,6 @@
+const myElement = document.getElementById("loading");
+myElement.style.display = "block";
+myElement.style.opacity = "1.0";
 $(document).ready(function(){
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         console.log('phone');
@@ -7,6 +10,7 @@ $(document).ready(function(){
         //$('.footer').html('<h1>open in mobile | reload</h1>');
     }
     $('#nikname').val('User'+Math.floor( Math.random() * 1000));
+
     function notify(txt='',status='warning'){
         id = 'notif_'+Math.floor( Math.random() * 100 )
         if (status=='success'){
@@ -30,8 +34,12 @@ $(document).ready(function(){
         }, 3290)
        
     }
-
-
+    function loading (t=200){
+        $('.loading').css('display', 'block');
+        $('.loading').animate({'opacity': "1.0"}, 200)
+        setTimeout(function() {
+            $('.loading').animate({'opacity': "0.0"}, 200,function(){$('.loading').css('display', 'none');})}, t);
+    }
     //do sth when window resized
     $(window).resize(function() { 
         //$('.main_content').css('height', ($('html').height()-105)+'px') 
@@ -43,14 +51,15 @@ $(document).ready(function(){
 
     window.history.pushState(null, "", window.location.href);        
     window.onpopstate = function() {
-            //window.history.pushState(null, "", window.location.href);
+            window.history.pushState(null, "", window.location.href);
             $('.info_div').animate({'opacity': "0.0"}, 200)
             $('.dark').animate({'opacity': "0.0"}, 200,function(){
                 $('.info_div').css('display', 'none');
                 $('.dark').css('display', 'none');
             });
-            if(true){
-                $.get("index.html", function(data, status){
+
+            if(false){
+                $.get("games/index.html", function(data, status){
                     //alert("Data: " + data + "\nStatus: " + status);
                     $('.main_content').html(data);
                 });
@@ -62,9 +71,8 @@ $(document).ready(function(){
                 $('.info_div').css('display', 'none');
                 $('.dark').css('display', 'none');
             }); 
-
-
     })
+
     $('#log_in').click(function (e) {
         notify(txt='wrong password or username !'  , 'failure' )
     })
@@ -92,9 +100,10 @@ $(document).ready(function(){
         stat = statuss[Math.floor( Math.random() * statuss.length )]
         //notify(txt=text[Math.floor( Math.random() * text.length )]  ,stat)
     })
+    
     $('.play_btn').click(function (e) { 
         notify(txt= $('#nikname').val()+' '  , 'success' )
-        $('.loading').animate({'opacity': "1.0"}, 200,function(){$('.loading').css('display', 'block');})
+        loading(1000);
         
         var xhl = new XMLHttpRequest();
         xhl.open("Post" , "./result.php" , true);
@@ -110,16 +119,23 @@ $(document).ready(function(){
             $('.main_content').html(data);
         });
         //$('.main_content').html("<h1>hi</h1>");
-        $('.loading').animate({'opacity': "0.0"}, 200,function(){$('.loading').css('display', 'none');})
-
+        loading(0);
+        
     })
+    
     $('.room_btn').click(function (e) { 
+        loading(1000);
         notify(txt='... !'  , 'failure' )
+        loading(0);
     })
     //clear loading page
-    $('.loading').animate({'opacity': "0.0"}, 200,function(){$('.loading').css('display', 'none');})
+    setTimeout(function() {
+        $('.loading').animate({'opacity': "0.0"}, 200,function(){$('.loading').css('display', 'none');})
+      }, 500);
 });
 window.onload = function () {
     console.log('loaded');
-    $('.loading').animate({'opacity': "0.0"}, 200,function(){$('.loading').css('display', 'none');})
+    setTimeout(function() {
+        $('.loading').animate({'opacity': "0.0"}, 200,function(){$('.loading').css('display', 'none');})
+      }, 500);
 }

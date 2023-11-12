@@ -257,9 +257,10 @@ button i {
     position: relative;
 }
 .loading{
+    opacity: 0;
     text-align: center;
     justify-content: center;
-    display: block;
+    display: none;
     position: fixed;
     top: 0px;
     left: 0px;
