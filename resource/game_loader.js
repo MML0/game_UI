@@ -30,11 +30,15 @@ $(document).ready(function(){
           }, t);
 
     }
+    
+    
     $('.game_logo').click(function (e) { 
+        loading(1000);
+        
         id = $(this).attr('id');
         console.log(id);
         
-        loading(1000);
+        $('.info i').removeClass("bi-info-circle").addClass("fa-chevron-left").removeClass("bi").addClass("fa");
         
         var xhl = new XMLHttpRequest();
         xhl.open("Post" , "./result.php" , true);

@@ -90,15 +90,29 @@ $(document).ready(function(){
         // }
     })
     $('.info').click(function (e) { 
+        if($('.info i').hasClass('fa-chevron-left')){
+            //if user was in a game then go back to game menu
+            loading(1000);
+            
+            $('.info i').addClass("bi-info-circle").removeClass("fa-chevron-left").addClass("bi").removeClass("fa");
+            $.get("games/index.html", function(data, status){
+                //alert("Data: " + data + "\nStatus: " + status);
+                $('.main_content').html(data);
+            });
+            //$('.main_content').html("<h1>hi</h1>");
+            loading(0);
+        
+        }else{
         //notify(txt='there is no purpose'  , 'failure' )
-        $('.dark').css({'opacity': "0.0",'display': 'block'});
-        $('.info_div').css({'opacity': "0.1","transform": "scale(1)",'display': 'block'});
-        $('.info_div').animate({'opacity': "1","transform": "scale(1.0)"}, 200)
-        $('.dark').animate({'opacity': "1"}, 100)
-        statuss = ['failure','success','warning']
-        text = ['successfully failed ', 'Internal Server Error', 'Bad Request', 'Unauthorized', 'Forbidden', 'Gateway Timeout', 'Service Unavailable', 'Network Connection Error', 'DNS Resolution Failure', 'Cross-Origin Request Blocked', 'SSL/TLS Handshake Failure', 'Invalid URL', 'Invalid Input Data', 'Session Expired', 'Database Connection Error', 'File Upload Failure', 'Out of Memory Error', 'Script Error', 'Resource Not Available', 'Permission Denied', 'Session Timeout']
-        stat = statuss[Math.floor( Math.random() * statuss.length )]
-        //notify(txt=text[Math.floor( Math.random() * text.length )]  ,stat)
+            $('.dark').css({'opacity': "0.0",'display': 'block'});
+            $('.info_div').css({'opacity': "0.1","transform": "scale(1)",'display': 'block'});
+            $('.info_div').animate({'opacity': "1","transform": "scale(1.0)"}, 200)
+            $('.dark').animate({'opacity': "1"}, 100)
+            statuss = ['failure','success','warning']
+            text = ['successfully failed ', 'Internal Server Error', 'Bad Request', 'Unauthorized', 'Forbidden', 'Gateway Timeout', 'Service Unavailable', 'Network Connection Error', 'DNS Resolution Failure', 'Cross-Origin Request Blocked', 'SSL/TLS Handshake Failure', 'Invalid URL', 'Invalid Input Data', 'Session Expired', 'Database Connection Error', 'File Upload Failure', 'Out of Memory Error', 'Script Error', 'Resource Not Available', 'Permission Denied', 'Session Timeout']
+            stat = statuss[Math.floor( Math.random() * statuss.length )]
+            //notify(txt=text[Math.floor( Math.random() * text.length )]  ,stat)
+        }
     })
     
     $('.play_btn').click(function (e) { 
